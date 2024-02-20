@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Event Project</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #center{
+            height: 100vh;
+            background-color: aquamarine;  
+        }
+        #incenter{
+            position: absolute;          
+            background-color: azure;
+            height: 200px;
+            width: 300px;
+            margin: 0 auto;
+            top:35%;
+            left:35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="center">
+        <div id="incenter" ></div>
+    </div>
+</body>
+
+<script>
+    let incenter = document.getElementById('incenter')
+    window.addEventListener('keydown',(e)=>{
+        incenter.innerHTML = 
+        `
+        <table style="border:1px solid black">
+    <tr >
+      <th>Key</th>
+      <th>Keycode</th> 
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key === ' ' ? 'Space' : e.key}</td>
+      <td>${e.keyCode}</td> 
+      <td>${e.code}</td>
+    </tr>
+    
+  </table>
+    </div>
+
+        `
+    })
+</script>
+
+</html>
